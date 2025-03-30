@@ -1,0 +1,500 @@
+Symbol,Company,Industry,Year_Added
+A,Agilent Technologies,Healthcare,2000
+AAL,American Airlines Group,Industrials,2015
+AAP,Advance Auto Parts,Consumer Discretionary,2015
+AAPL,Apple Inc.,Technology,1982
+ABBV,AbbVie Inc.,Healthcare,2012
+ABC,AmerisourceBergen,Healthcare,2001
+ABNB,Airbnb Inc.,Consumer Discretionary,2022
+ABT,Abbott Laboratories,Healthcare,1964
+ACGL,Arch Capital Group,Financials,2023
+ACN,Accenture plc,Technology,2011
+ADBE,Adobe Inc.,Technology,1997
+ADI,Analog Devices,Technology,1979
+ADM,Archer-Daniels-Midland,Consumer Staples,1981
+ADP,Automatic Data Processing,Technology,1981
+ADSK,Autodesk Inc.,Technology,1989
+AEE,Ameren Corporation,Utilities,1991
+AEP,American Electric Power,Utilities,1957
+AES,AES Corporation,Utilities,1998
+AFL,Aflac Inc.,Financials,1987
+AIG,American International Group,Financials,1980
+AIZ,Assurant Inc.,Financials,2007
+AJG,Arthur J. Gallagher,Financials,2016
+AKAM,Akamai Technologies,Technology,2007
+ALB,Albemarle Corporation,Materials,2016
+ALGN,Align Technology,Healthcare,2017
+ALK,Alaska Air Group,Industrials,2016
+ALL,Allstate Corporation,Financials,1995
+ALLE,Allegion plc,Industrials,2013
+AMAT,Applied Materials,Technology,1995
+AMCR,Amcor plc,Materials,2019
+AMD,Advanced Micro Devices,Technology,1983
+AME,AMETEK Inc.,Industrials,2013
+AMGN,Amgen Inc.,Healthcare,1989
+AMP,Ameriprise Financial,Financials,2005
+AMT,American Tower,Real Estate,2007
+AMZN,Amazon.com Inc.,Consumer Discretionary,2005
+ANET,Arista Networks,Technology,2018
+ANSS,ANSYS Inc.,Technology,2017
+AON,Aon plc,Financials,1987
+AOS,A. O. Smith,Industrials,2017
+APA,APA Corporation,Energy,1997
+APD,Air Products & Chemicals,Materials,1965
+APH,Amphenol Corporation,Technology,2008
+APTV,Aptiv plc,Consumer Discretionary,2012
+ARE,Alexandria Real Estate,Real Estate,2017
+ARM,ARM Holdings,Technology,2023
+ATI,ATI Inc.,Materials,2011
+AVB,AvalonBay Communities,Real Estate,2007
+AVGO,Broadcom Inc.,Technology,2014
+AVY,Avery Dennison,Materials,1987
+AWK,American Water Works,Utilities,2016
+AXON,Axon Enterprise,Industrials,2023
+AXP,American Express,Financials,1976
+AZO,AutoZone Inc.,Consumer Discretionary,1997
+BA,Boeing Company,Industrials,1957
+BAC,Bank of America,Financials,1976
+BALL,Ball Corporation,Materials,1984
+BAX,Baxter International,Healthcare,1972
+BBWI,Bath & Body Works,Consumer Discretionary,1983
+BBY,Best Buy Co.,Consumer Discretionary,1999
+BDX,Becton Dickinson,Healthcare,1969
+BEN,Franklin Resources,Financials,1979
+BF.B,Brown-Forman,Consumer Staples,1982
+BIIB,Biogen Inc.,Healthcare,2003
+BIO,Bio-Rad Laboratories,Healthcare,2020
+BK,Bank of New York Mellon,Financials,1995
+BKNG,Booking Holdings,Consumer Discretionary,2009
+BKR,Baker Hughes,Energy,2017
+BLK,BlackRock Inc.,Financials,2011
+BMY,Bristol-Myers Squibb,Healthcare,1957
+BR,Broadridge Financial,Technology,2007
+BRK.B,Berkshire Hathaway,Financials,2010
+BRO,Brown & Brown,Financials,2021
+BSX,Boston Scientific,Healthcare,1995
+BWA,BorgWarner Inc.,Consumer Discretionary,2011
+BXP,Boston Properties,Real Estate,2006
+C,Citigroup Inc.,Financials,1988
+CAG,ConAgra Foods,Consumer Staples,1983
+CAH,Cardinal Health,Healthcare,1997
+CARR,Carrier Global,Industrials,2020
+CAT,Caterpillar Inc.,Industrials,1957
+CB,Chubb Limited,Financials,1985
+CBOE,Cboe Global Markets,Financials,2017
+CBRE,CBRE Group,Real Estate,2006
+CCI,Crown Castle Inc.,Real Estate,2012
+CCL,Carnival Corporation,Consumer Discretionary,1998
+CDNS,Cadence Design Systems,Technology,2017
+CDW,CDW Corporation,Technology,2019
+CE,Celanese Corporation,Materials,2010
+CEG,Constellation Energy,Utilities,2022
+CF,CF Industries Holdings,Materials,2008
+CFG,Citizens Financial Group,Financials,2015
+CHD,Church & Dwight,Consumer Staples,2015
+CHRW,C.H. Robinson,Industrials,2007
+CHTR,Charter Communications,Communication Services,2016
+CI,The Cigna Group,Healthcare,1976
+CINF,Cincinnati Financial,Financials,1997
+CL,Colgate-Palmolive,Consumer Staples,1957
+CLX,Clorox Company,Consumer Staples,1969
+CMA,Comerica Inc.,Financials,1987
+CMCSA,Comcast Corporation,Communication Services,2002
+CME,CME Group Inc.,Financials,2006
+CMG,Chipotle Mexican Grill,Consumer Discretionary,2011
+CMI,Cummins Inc.,Industrials,1965
+CMS,CMS Energy,Utilities,1999
+CNC,Centene Corporation,Healthcare,2016
+CNP,CenterPoint Energy,Utilities,1985
+COF,Capital One Financial,Financials,1998
+COO,Cooper Companies,Healthcare,2016
+COP,ConocoPhillips,Energy,1957
+COST,Costco Wholesale,Consumer Staples,1993
+CPB,Campbell Soup,Consumer Staples,1957
+CPRT,Copart Inc.,Industrials,2018
+CPT,Camden Property Trust,Real Estate,2022
+CRL,Charles River Laboratories,Healthcare,2021
+CRM,Salesforce.com,Technology,2008
+CSCO,Cisco Systems,Technology,1993
+CSGP,CoStar Group,Industrials,2022
+CSX,CSX Corporation,Industrials,1967
+CTAS,Cintas Corporation,Industrials,2001
+CTLT,Catalent Inc.,Healthcare,2020
+CTRA,Coterra Energy,Energy,2008
+CTSH,Cognizant Technology,Technology,2006
+CTVA,Corteva Inc.,Materials,2019
+CVS,CVS Health,Healthcare,1981
+CVX,Chevron Corporation,Energy,1957
+CZR,Caesars Entertainment,Consumer Discretionary,2021
+D,Dominion Energy,Utilities,1983
+DAL,Delta Air Lines,Industrials,2013
+DD,DuPont de Nemours,Materials,2019
+DE,Deere & Company,Industrials,1957
+DFS,Discover Financial,Financials,2007
+DG,Dollar General,Consumer Discretionary,2012
+DGX,Quest Diagnostics,Healthcare,2002
+DHI,D.R. Horton,Consumer Discretionary,2005
+DHR,Danaher Corporation,Healthcare,1987
+DIS,The Walt Disney Company,Communication Services,1976
+DLR,Digital Realty Trust,Real Estate,2016
+DLTR,Dollar Tree Inc.,Consumer Discretionary,2011
+DOV,Dover Corporation,Industrials,1985
+DOW,Dow Inc.,Materials,2019
+DPZ,Domino's Pizza,Consumer Discretionary,2020
+DRI,Darden Restaurants,Consumer Discretionary,2006
+DTE,DTE Energy Company,Utilities,1957
+DUK,Duke Energy,Utilities,1976
+DVA,DaVita Inc.,Healthcare,2008
+DVN,Devon Energy,Energy,2000
+DXCM,DexCom Inc.,Healthcare,2020
+EA,Electronic Arts,Communication Services,2002
+EBAY,eBay Inc.,Consumer Discretionary,2002
+ECL,Ecolab Inc.,Materials,1981
+ED,Consolidated Edison,Utilities,1957
+EFX,Equifax Inc.,Industrials,1997
+EG,Everest Group,Financials,2023
+EIX,Edison International,Utilities,1957
+EL,Estée Lauder,Consumer Staples,2006
+ELV,Elevance Health,Healthcare,2002
+EMN,Eastman Chemical,Materials,1994
+EMR,Emerson Electric,Industrials,1965
+ENPH,Enphase Energy,Technology,2021
+EOG,EOG Resources,Energy,1989
+EPAM,EPAM Systems,Technology,2021
+EQR,Equity Residential,Real Estate,2001
+EQT,EQT Corporation,Energy,2018
+ES,Eversource Energy,Utilities,1976
+ESS,Essex Property Trust,Real Estate,2014
+ETN,Eaton Corporation,Industrials,1957
+ETR,Entergy Corporation,Utilities,1957
+EVRG,Evergy Inc.,Utilities,2018
+EW,Edwards Lifesciences,Healthcare,2011
+EXC,Exelon Corporation,Utilities,1957
+EXPD,Expeditors International,Industrials,1997
+EXPE,Expedia Group,Consumer Discretionary,2007
+EXR,Extra Space Storage,Real Estate,2016
+F,Ford Motor Company,Consumer Discretionary,1957
+FANG,Diamondback Energy,Energy,2018
+FAST,Fastenal Company,Industrials,2008
+FCX,Freeport-McMoRan,Materials,1988
+FDS,FactSet Research,Financials,2021
+FDX,FedEx Corporation,Industrials,1980
+FE,FirstEnergy Corp.,Utilities,1957
+FFIV,F5 Inc.,Technology,2010
+FI,Fiserv Inc.,Technology,2019
+FICO,Fair Isaac Corporation,Technology,2023
+FIS,Fidelity National Information,Technology,2006
+FITB,Fifth Third Bancorp,Financials,1991
+FLT,FleetCor Technologies,Technology,2018
+FMC,FMC Corporation,Materials,2009
+FOX,Fox Corporation Class B,Communication Services,2019
+FRT,Federal Realty,Real Estate,2016
+FSLR,First Solar Inc.,Technology,2023
+FTV,Fortive Corporation,Industrials,2016
+GD,General Dynamics,Industrials,1957
+GE,General Electric,Industrials,1957
+GEHC,GE HealthCare,Healthcare,2023
+GEN,Gen Digital,Technology,2003
+GILD,Gilead Sciences,Healthcare,2004
+GIS,General Mills,Consumer Staples,1969
+GL,Globe Life Inc.,Financials,1989
+GLW,Corning Inc.,Technology,1982
+GM,General Motors,Consumer Discretionary,2013
+GNRC,Generac Holdings,Industrials,2021
+GOOG,Alphabet Inc. Class C,Communication Services,2014
+GOOGL,Alphabet Inc. Class A,Communication Services,2014
+GPC,Genuine Parts,Consumer Discretionary,1957
+GPN,Global Payments,Technology,2016
+GRMN,Garmin Ltd.,Consumer Discretionary,2012
+GS,Goldman Sachs,Financials,2002
+GWW,W.W. Grainger,Industrials,1981
+HAL,Halliburton Company,Energy,1957
+HAS,Hasbro Inc.,Consumer Discretionary,1984
+HBAN,Huntington Bancshares,Financials,1994
+HCA,HCA Healthcare,Healthcare,2015
+HD,Home Depot,Consumer Discretionary,1988
+HES,Hess Corporation,Energy,1984
+HIG,Hartford Financial,Financials,1995
+HII,Huntington Ingalls,Industrials,2011
+HLT,Hilton Worldwide,Consumer Discretionary,2017
+HOLX,Hologic Inc.,Healthcare,2016
+HON,Honeywell International,Industrials,1964
+HPE,Hewlett Packard Enterprise,Technology,2015
+HPQ,HP Inc.,Technology,1974
+HRL,Hormel Foods,Consumer Staples,2009
+HSIC,Henry Schein,Healthcare,2015
+HST,Host Hotels & Resorts,Real Estate,2007
+HSY,The Hershey Company,Consumer Staples,1957
+HTZ,Hertz Global Holdings,Industrials,2023
+HUBB,Hubbell Inc.,Industrials,2023
+HUM,Humana Inc.,Healthcare,1997
+HWM,Howmet Aerospace,Industrials,2019
+IBM,IBM Corporation,Technology,1957
+ICE,Intercontinental Exchange,Financials,2007
+IDXX,IDEXX Laboratories,Healthcare,2017
+IEX,IDEX Corporation,Industrials,2019
+IFF,International Flavors,Materials,1976
+ILMN,Illumina Inc.,Healthcare,2015
+INCY,Incyte Corporation,Healthcare,2017
+INTC,Intel Corporation,Technology,1976
+INTU,Intuit Inc.,Technology,2000
+INVH,Invitation Homes,Real Estate,2022
+IP,International Paper,Materials,1957
+IPG,Interpublic Group,Communication Services,1992
+IQV,IQVIA Holdings,Healthcare,2017
+IR,Ingersoll Rand,Industrials,2020
+IRM,Iron Mountain,Real Estate,2009
+ISRG,Intuitive Surgical,Healthcare,2008
+IT,Gartner Inc.,Technology,2017
+ITW,Illinois Tool Works,Industrials,1986
+IVZ,Invesco Ltd.,Financials,2008
+J,Jacobs Solutions,Industrials,2007
+JBHT,J.B. Hunt Transport,Industrials,2015
+JCI,Johnson Controls,Industrials,1985
+JKHY,Jack Henry & Associates,Technology,2018
+JNJ,Johnson & Johnson,Healthcare,1963
+JNPR,Juniper Networks,Technology,2006
+JPM,JPMorgan Chase,Financials,1975
+K,Kellogg Company,Consumer Staples,1989
+KDP,Keurig Dr Pepper,Consumer Staples,2022
+KEY,KeyCorp,Financials,1994
+KEYS,Keysight Technologies,Technology,2018
+KHC,Kraft Heinz Company,Consumer Staples,2015
+KIM,Kimco Realty,Real Estate,2006
+KLAC,KLA Corporation,Technology,1997
+KMB,Kimberly-Clark,Consumer Staples,1957
+KMI,Kinder Morgan,Energy,2012
+KMX,CarMax Inc.,Consumer Discretionary,2010
+KO,Coca-Cola Company,Consumer Staples,1957
+KR,Kroger Company,Consumer Staples,1957
+L,Loews Corporation,Financials,1957
+LDOS,Leidos Holdings,Technology,2019
+LEN,Lennar Corporation,Consumer Discretionary,2005
+LH,Laboratory Corp.,Healthcare,2004
+LHX,L3Harris Technologies,Industrials,2008
+LIN,Linde plc,Materials,1992
+LKQ,LKQ Corporation,Consumer Discretionary,2016
+LLY,Eli Lilly,Healthcare,1970
+LMT,Lockheed Martin,Industrials,1984
+LNT,Alliant Energy,Utilities,1957
+LOW,Lowe's Companies,Consumer Discretionary,1984
+LRCX,Lam Research,Technology,2012
+LULU,Lululemon Athletica,Consumer Discretionary,2019
+LUV,Southwest Airlines,Industrials,1994
+LVS,Las Vegas Sands,Consumer Discretionary,2019
+LW,Lamb Weston,Consumer Staples,2018
+LYB,LyondellBasell,Materials,2012
+LYV,Live Nation Entertainment,Communication Services,2019
+MA,Mastercard Inc.,Financials,2008
+MAA,Mid-America Apartment,Real Estate,2016
+MAR,Marriott International,Consumer Discretionary,1995
+MAS,Masco Corporation,Industrials,1981
+MCD,McDonald's Corporation,Consumer Discretionary,1970
+MCHP,Microchip Technology,Technology,2007
+MCK,McKesson Corporation,Healthcare,1994
+MCO,Moody's Corporation,Financials,2004
+MDLZ,Mondelez International,Consumer Staples,2012
+MDT,Medtronic plc,Healthcare,1977
+MET,MetLife Inc.,Financials,2000
+META,Meta Platforms,Communication Services,2013
+MGM,MGM Resorts International,Consumer Discretionary,2017
+MHK,Mohawk Industries,Consumer Discretionary,2013
+MKC,McCormick & Company,Consumer Staples,2003
+MKTX,MarketAxess Holdings,Financials,2019
+MLM,Martin Marietta Materials,Materials,2014
+MMC,Marsh & McLennan,Financials,1987
+MMM,3M Company,Industrials,1976
+MNST,Monster Beverage,Consumer Staples,2012
+MO,Altria Group,Consumer Staples,1957
+MOH,Molina Healthcare,Healthcare,2022
+MOS,Mosaic Company,Materials,2011
+MPC,Marathon Petroleum,Energy,2011
+MPWR,Monolithic Power Systems,Technology,2021
+MRK,Merck & Co.,Healthcare,1957
+MRNA,Moderna Inc.,Healthcare,2021
+MRO,Marathon Oil,Energy,1991
+MS,Morgan Stanley,Financials,1996
+MSCI,MSCI Inc.,Financials,2018
+MSFT,Microsoft Corporation,Technology,1994
+MSI,Motorola Solutions,Technology,1982
+MTB,M&T Bank Corporation,Financials,2004
+MTCH,Match Group,Communication Services,2021
+MTD,Mettler-Toledo,Healthcare,2016
+MU,Micron Technology,Technology,1994
+NCLH,Norwegian Cruise Line,Consumer Discretionary,2017
+NDAQ,Nasdaq Inc.,Financials,2008
+NDSN,Nordson Corporation,Industrials,2017
+NEE,NextEra Energy,Utilities,1976
+NEM,Newmont Corporation,Materials,1969
+NI,NiSource Inc.,Utilities,1985
+NKE,Nike Inc.,Consumer Discretionary,1988
+NLOK,NortonLifeLock,Technology,2003
+NOC,Northrop Grumman,Industrials,1985
+NOW,ServiceNow Inc.,Technology,2019
+NRG,NRG Energy,Utilities,2010
+NSC,Norfolk Southern,Industrials,1957
+NTAP,NetApp Inc.,Technology,1999
+NTRS,Northern Trust,Financials,1989
+NUE,Nucor Corporation,Materials,1985
+NVDA,NVIDIA Corporation,Technology,2001
+NVR,NVR Inc.,Consumer Discretionary,2005
+NWL,Newell Brands,Consumer Discretionary,1989
+NWS,News Corporation Class B,Communication Services,2013
+NWSA,News Corporation Class A,Communication Services,2013
+NXPI,NXP Semiconductors,Technology,2021
+O,Realty Income,Real Estate,2015
+ODFL,Old Dominion Freight,Industrials,2019
+OGN,Organon & Co.,Healthcare,2021
+OKE,ONEOK Inc.,Energy,1980
+OMC,Omnicom Group,Communication Services,1987
+ON,ON Semiconductor,Technology,2022
+ORCL,Oracle Corporation,Technology,1989
+ORLY,O'Reilly Automotive,Consumer Discretionary,2009
+OTIS,Otis Worldwide,Industrials,2020
+OXY,Occidental Petroleum,Energy,1982
+PANW,Palo Alto Networks,Technology,2023
+PARA,Paramount Global,Communication Services,1990
+PAYC,Paycom Software,Technology,2020
+PAYX,Paychex Inc.,Technology,1997
+PCAR,PACCAR Inc.,Industrials,1980
+PCG,PG&E Corporation,Utilities,2023
+PEAK,Healthpeak Properties,Real Estate,2019
+PEG,Public Service Enterprise,Utilities,1976
+PEP,PepsiCo Inc.,Consumer Staples,1957
+PFE,Pfizer Inc.,Healthcare,1957
+PFG,Principal Financial,Financials,2002
+PG,Procter & Gamble,Consumer Staples,1957
+PGR,Progressive Corporation,Financials,1997
+PH,Parker-Hannifin,Industrials,1985
+PHM,PulteGroup Inc.,Consumer Discretionary,1984
+PKG,Packaging Corporation,Materials,2017
+PKI,PerkinElmer Inc.,Healthcare,2018
+PLD,Prologis Inc.,Real Estate,2003
+PM,Philip Morris,Consumer Staples,2008
+PNC,PNC Financial Services,Financials,1988
+PNR,Pentair plc,Industrials,2012
+PNW,Pinnacle West Capital,Utilities,1985
+PODD,Insulet Corporation,Healthcare,2023
+POOL,Pool Corporation,Consumer Discretionary,2020
+PPG,PPG Industries,Materials,1957
+PPL,PPL Corporation,Utilities,1957
+PRU,Prudential Financial,Financials,2002
+PSA,Public Storage,Real Estate,2005
+PSX,Phillips 66,Energy,2012
+PTC,PTC Inc.,Technology,2021
+PWR,Quanta Services,Industrials,2009
+PXD,Pioneer Natural Resources,Energy,2008
+PYPL,PayPal Holdings,Financials,2015
+QCOM,QUALCOMM Inc.,Technology,1999
+QRVO,Qorvo Inc.,Technology,2015
+RCL,Royal Caribbean Group,Consumer Discretionary,2014
+REG,Regency Centers,Real Estate,2017
+REGN,Regeneron Pharmaceuticals,Healthcare,2013
+RF,Regions Financial,Financials,1998
+RHI,Robert Half,Industrials,2000
+RJF,Raymond James Financial,Financials,2017
+RL,Ralph Lauren Corporation,Consumer Discretionary,2007
+RMD,ResMed Inc.,Healthcare,2017
+ROK,Rockwell Automation,Industrials,1997
+ROL,Rollins Inc.,Industrials,2018
+ROP,Roper Technologies,Industrials,2003
+ROST,Ross Stores,Consumer Discretionary,2009
+RSG,Republic Services,Industrials,2008
+RTX,Raytheon Technologies,Industrials,2020
+RVTY,Revvity Inc.,Healthcare,2019
+SBUX,Starbucks Corporation,Consumer Discretionary,2000
+SCHW,Charles Schwab,Financials,1997
+SEDG,SolarEdge Technologies,Technology,2021
+SEE,Sealed Air Corporation,Materials,1957
+SHW,Sherwin-Williams,Materials,1964
+SJM,J.M. Smucker,Consumer Staples,2008
+SLB,Schlumberger Limited,Energy,1962
+SNA,Snap-on Inc.,Industrials,1982
+SNPS,Synopsys Inc.,Technology,2017
+SO,Southern Company,Utilities,1957
+SPG,Simon Property Group,Real Estate,2002
+SPGI,S&P Global Inc.,Financials,1995
+SRE,Sempra Energy,Utilities,1999
+STE,STERIS plc,Healthcare,2019
+STLD,Steel Dynamics,Materials,2022
+STT,State Street Corporation,Financials,1995
+STX,Seagate Technology,Technology,2012
+STZ,Constellation Brands,Consumer Staples,2005
+SWK,Stanley Black & Decker,Industrials,1982
+SWKS,Skyworks Solutions,Technology,2015
+SYF,Synchrony Financial,Financials,2015
+SYK,Stryker Corporation,Healthcare,1995
+SYY,Sysco Corporation,Consumer Staples,1986
+T,AT&T Inc.,Communication Services,1983
+TAP,Molson Coors Beverage,Consumer Staples,1976
+TDG,TransDigm Group,Industrials,2016
+TDY,Teledyne Technologies,Technology,2019
+TECH,Bio-Techne Corporation,Healthcare,2021
+TEL,TE Connectivity,Technology,2011
+TER,Teradyne Inc.,Technology,2001
+TFC,Truist Financial,Financials,1997
+TFX,Teleflex Inc.,Healthcare,2018
+TGT,Target Corporation,Consumer Discretionary,1976
+TJX,TJX Companies,Consumer Discretionary,1986
+TMO,Thermo Fisher Scientific,Healthcare,1998
+TMUS,T-Mobile US,Communication Services,2019
+TPR,Tapestry Inc.,Consumer Discretionary,2017
+TRGP,Targa Resources,Energy,2022
+TRMB,Trimble Inc.,Technology,2021
+TROW,T. Rowe Price,Financials,2000
+TRV,The Travelers Companies,Financials,2002
+TSCO,Tractor Supply,Consumer Discretionary,2014
+TSLA,Tesla Inc.,Consumer Discretionary,2020
+TSN,Tyson Foods,Consumer Staples,2005
+TT,Trane Technologies,Industrials,2010
+TTWO,Take-Two Interactive,Communication Services,2018
+TWTR,Twitter Inc.,Communication Services,2018
+TXN,Texas Instruments,Technology,1988
+TXT,Textron Inc.,Industrials,1978
+TYL,Tyler Technologies,Technology,2020
+UAL,United Airlines Holdings,Industrials,2015
+UDR,UDR Inc.,Real Estate,2016
+UHS,Universal Health Services,Healthcare,2014
+ULTA,Ulta Beauty,Consumer Discretionary,2016
+UNH,UnitedHealth Group,Healthcare,1994
+UNP,Union Pacific,Industrials,1957
+UPS,United Parcel Service,Industrials,2002
+URI,United Rentals,Industrials,2014
+USB,U.S. Bancorp,Financials,1994
+V,Visa Inc.,Financials,2009
+VFC,VF Corporation,Consumer Discretionary,1979
+VICI,VICI Properties,Real Estate,2022
+VLO,Valero Energy,Energy,2000
+VMC,Vulcan Materials,Materials,1999
+VRSK,Verisk Analytics,Industrials,2015
+VRSN,VeriSign Inc.,Technology,2006
+VRTX,Vertex Pharmaceuticals,Healthcare,2013
+VTR,Ventas Inc.,Real Estate,2009
+VTRS,Viatris Inc.,Healthcare,2020
+VZ,Verizon Communications,Communication Services,1983
+WAB,Westinghouse Air Brake,Industrials,2019
+WAT,Waters Corporation,Healthcare,1995
+WBA,Walgreens Boots Alliance,Consumer Staples,1979
+WBD,Warner Bros. Discovery,Communication Services,2022
+WDC,Western Digital,Technology,2009
+WEC,WEC Energy Group,Utilities,2008
+WELL,Welltower Inc.,Real Estate,2009
+WFC,Wells Fargo,Financials,1976
+WHR,Whirlpool Corporation,Consumer Discretionary,1982
+WM,Waste Management,Industrials,1993
+WMB,Williams Companies,Energy,1975
+WMT,Walmart Inc.,Consumer Staples,1982
+WRB,W. R. Berkley,Financials,2019
+WRK,WestRock Company,Materials,2015
+WST,West Pharmaceutical,Healthcare,2020
+WTW,Willis Towers Watson,Financials,2016
+WY,Weyerhaeuser Company,Real Estate,1967
+WYNN,Wynn Resorts,Consumer Discretionary,2008
+XEL,Xcel Energy,Utilities,1957
+XOM,Exxon Mobil,Energy,1957
+XYL,Xylem Inc.,Industrials,2011
+YUM,Yum! Brands,Consumer Discretionary,1997
+ZBH,Zimmer Biomet,Healthcare,2001
+ZBRA,Zebra Technologies,Technology,2019
+ZION,Zions Bancorporation,Financials,2001
+ZTS,Zoetis Inc.,Healthcare,2013
