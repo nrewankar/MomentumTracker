@@ -142,11 +142,21 @@ def calculate_momentum(use_cache=True, custom_file=None):
     # Update calculation status in session state
     st.session_state.calculation_status = "calculating"
     
-    # Create a status container for displaying status messages
-    status_container = st.empty()
+    # Create status containers for displaying different stages of processing
+    main_status_container = st.empty()
+    progress_container = st.empty()
+    detail_container = st.empty()
     
     # Show the initial calculating message
-    status_container.info(f"📊 Calculating momentum scores for {data_source}...")
+    main_status_container.info(f"📊 Calculating momentum scores for {data_source}...")
+    progress_container.markdown("""
+    <div style="padding: 10px; border-radius: 5px; background-color: #f0f2f6; margin-bottom: 10px;">
+        <p style="margin: 0; font-size: 0.9rem;">
+            <b>Step 1/4:</b> Preparing to download stock price data...
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    detail_container.caption("This may take several minutes. The app needs to download historical price data and process it.")
     
     with st.spinner(f"Processing stock data... This may take a few minutes."):
         # Get date range
@@ -169,17 +179,108 @@ Custom File: {'Provided' if custom_file is not None else 'None'}
             try:
                 custom_file.seek(0)
             except:
-                status_container.error("Error accessing the uploaded file. Please try uploading it again.")
+                main_status_container.error("Error accessing the uploaded file. Please try uploading it again.")
                 st.session_state.calculation_status = "error"
                 return
         
-        # Calculate momentum with caching option
-        results = calculate_momentum_scores(
-            start_date=start_date, 
-            end_date=end_date, 
-            use_cache=use_cache,
-            custom_file=custom_file
-        )
+        # Before calculating, update the progress indicator to step 2
+        progress_container.markdown("""
+        <div style="padding: 10px; border-radius: 5px; background-color: #f0f2f6; margin-bottom: 10px;">
+            <p style="margin: 0; font-size: 0.9rem;">
+                <b>Step 2/4:</b> Downloading historical price data from Yahoo Finance...
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        detail_container.caption("Downloading data for 500+ stocks can take several minutes. The app is downloading in small batches to avoid API rate limits.")
+        
+        # Set a time limit for the calculation
+        import threading
+        import time
+        
+        # Create a flag to track if the calculation is taking too long
+        calculation_timeout = False
+        
+        # Function to update the UI during long calculations
+        def update_waiting_message():
+            wait_time = 0
+            max_wait_time = 180  # 3 minutes max wait time
+            update_interval = 20  # Update message every 20 seconds
+            
+            nonlocal calculation_timeout
+            
+            while wait_time < max_wait_time and not calculation_timeout:
+                time.sleep(update_interval)
+                wait_time += update_interval
+                
+                if wait_time >= 60:  # After 1 minute
+                    detail_container.caption(f"Still working... This can take several minutes. Downloaded data is being processed (waited {wait_time} seconds)")
+                
+                if wait_time >= 120:  # After 2 minutes
+                    progress_container.markdown("""
+                    <div style="padding: 10px; border-radius: 5px; background-color: #fff3cd; margin-bottom: 10px;">
+                        <p style="margin: 0; font-size: 0.9rem;">
+                            <b>Taking longer than expected:</b> Processing large amount of data. Please continue to wait...
+                        </p>
+                    </div>
+                    """, unsafe_allow_html=True)
+            
+            # If we hit the max wait time, show a timeout message
+            if wait_time >= max_wait_time and not calculation_timeout:
+                calculation_timeout = True
+                progress_container.markdown("""
+                <div style="padding: 10px; border-radius: 5px; background-color: #f8d7da; margin-bottom: 10px;">
+                    <p style="margin: 0; font-size: 0.9rem;">
+                        <b>Taking too long:</b> The calculation may be stuck due to API rate limiting.
+                    </p>
+                </div>
+                """, unsafe_allow_html=True)
+                detail_container.caption("Try using cached data or try again later. Yahoo Finance API may be throttling requests.")
+        
+        # Start the timer thread
+        timer_thread = threading.Thread(target=update_waiting_message)
+        timer_thread.daemon = True  # This ensures the thread won't prevent app from exiting
+        timer_thread.start()
+        
+        try:
+            # Calculate momentum with caching option (with timeout handling)
+            results = calculate_momentum_scores(
+                start_date=start_date, 
+                end_date=end_date, 
+                use_cache=use_cache,
+                custom_file=custom_file
+            )
+            # Mark that we've finished calculation
+            calculation_timeout = True
+        except Exception as e:
+            # Mark that we've finished calculation
+            calculation_timeout = True
+            # Show error message
+            main_status_container.error(f"Error during calculation: {str(e)}")
+            detail_container.info("There was an unexpected error. Try again with 'Use cached data' option enabled.")
+            st.session_state.calculation_status = "error"
+            return
+        
+        # Check if we have partial results before marking as error
+        if "error" not in results:
+            # Update progress to step 3 - data processing
+            progress_container.markdown("""
+            <div style="padding: 10px; border-radius: 5px; background-color: #f0f2f6; margin-bottom: 10px;">
+                <p style="margin: 0; font-size: 0.9rem;">
+                    <b>Step 3/4:</b> Calculating momentum scores for each stock...
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+            detail_container.caption("Analyzing price data to compute momentum factors, ranking stocks, and preparing visualizations...")
+        
+            # After we get results and before we format, update to step 4
+            progress_container.markdown("""
+            <div style="padding: 10px; border-radius: 5px; background-color: #f0f2f6; margin-bottom: 10px;">
+                <p style="margin: 0; font-size: 0.9rem;">
+                    <b>Step 4/4:</b> Finalizing analysis and preparing dashboard...
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+            detail_container.caption("Almost done! Formatting results and preparing interactive visualizations...")
         
         if "error" not in results:
             st.session_state.momentum_results = results
@@ -192,15 +293,19 @@ Custom File: {'Provided' if custom_file is not None else 'None'}
             else:
                 st.session_state.last_updated_custom = current_time
             
-            # Clear the previous status message and show success
-            status_container.empty()
-            status_container.success("Momentum calculation completed successfully!")
+            # Clear the previous status messages and show success
+            main_status_container.empty()
+            progress_container.empty()
+            detail_container.empty()
+            main_status_container.success("Momentum calculation completed successfully!")
             st.session_state.calculation_status = "complete"
         else:
-            # Clear the previous status message and show error
-            status_container.empty()
-            status_container.error(f"Error calculating momentum: {results['error']}")
-            status_container.info("Consider using a smaller data set or enabling data caching to avoid API rate limiting.")
+            # Clear the previous status messages and show error
+            main_status_container.empty()
+            progress_container.empty()
+            detail_container.empty()
+            main_status_container.error(f"Error calculating momentum: {results['error']}")
+            detail_container.info("Consider using a smaller data set or enabling data caching to avoid API rate limiting.")
             st.session_state.calculation_status = "error"
 
 # Header section with modern styling
@@ -485,173 +590,3 @@ if st.session_state.formatted_data and "error" not in st.session_state.formatted
         last_date = pd.to_datetime(formatted_data["last_date"]).strftime("%Y-%m-%d")
         st.markdown(f"""
         <div class="metric-container" style="text-align: center; padding: 20px; border-radius: 10px; background-color: #f0f7ff; border-left: 5px solid #1E88E5;">
-            <p style="color: #616161; font-size: 0.9rem; margin-bottom: 5px;">DATA AS OF</p>
-            <h2 style="color: #1E88E5; font-size: 2rem; margin: 0;">{last_date}</h2>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col3:
-        # Count stocks with strong classifications
-        strong_buy = len(formatted_data["display_df"][formatted_data["display_df"]["classification"] == "Strong Buy"])
-        strong_sell = len(formatted_data["display_df"][formatted_data["display_df"]["classification"] == "Strong Sell"])
-        st.markdown(f"""
-        <div class="metric-container" style="text-align: center; padding: 20px; border-radius: 10px; background-color: #f0f7ff; border-left: 5px solid #1E88E5;">
-            <p style="color: #616161; font-size: 0.9rem; margin-bottom: 5px;">STRONG BUY/SELL SIGNALS</p>
-            <h2 style="color: #1E88E5; font-size: 2rem; margin: 0;">{strong_buy} / {strong_sell}</h2>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    # Top and Bottom Stocks Section with modern styling
-    st.markdown("""
-    <h2 style="color: #424242; border-bottom: 2px solid #1E88E5; padding-bottom: 8px; margin-bottom: 20px; margin-top: 30px;">
-        Top and Bottom Stocks by Momentum
-    </h2>
-    """, unsafe_allow_html=True)
-    
-    # Display top and bottom stocks in tabs
-    tab1, tab2 = st.tabs(["Top Momentum Stocks", "Bottom Momentum Stocks"])
-    
-    with tab1:
-        st.dataframe(
-            formatted_data["top_stocks"][["symbol", "Company", "Industry", "momentum", "factor_rank", "classification"]],
-            use_container_width=True,
-            column_config={
-                "symbol": "Symbol",
-                "Company": "Company Name",
-                "Industry": "Industry",
-                "momentum": st.column_config.NumberColumn("Momentum Score", format="%.4f"),
-                "factor_rank": st.column_config.NumberColumn("Rank", format="%d"),
-                "classification": "Classification"
-            }
-        )
-    
-    with tab2:
-        st.dataframe(
-            formatted_data["bottom_stocks"][["symbol", "Company", "Industry", "momentum", "factor_rank", "classification"]],
-            use_container_width=True,
-            column_config={
-                "symbol": "Symbol",
-                "Company": "Company Name",
-                "Industry": "Industry",
-                "momentum": st.column_config.NumberColumn("Momentum Score", format="%.4f"),
-                "factor_rank": st.column_config.NumberColumn("Rank", format="%d"),
-                "classification": "Classification"
-            }
-        )
-    
-    # Visualizations section
-    st.markdown("""
-    <h2 style="color: #424242; border-bottom: 2px solid #1E88E5; padding-bottom: 8px; margin-bottom: 20px; margin-top: 30px;">
-        Visualizations
-    </h2>
-    """, unsafe_allow_html=True)
-    
-    # Create two columns for graphs
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        # Distribution of momentum scores
-        momentum_dist_fig = plot_momentum_distribution(formatted_data["display_df"])
-        st.plotly_chart(momentum_dist_fig, use_container_width=True)
-        
-        # Top and bottom stocks bar chart
-        top_bottom_fig = plot_top_bottom_momentum(formatted_data["display_df"])
-        st.plotly_chart(top_bottom_fig, use_container_width=True)
-    
-    with col2:
-        # Industry breakdown pie chart
-        industry_breakdown_fig = plot_industry_breakdown(formatted_data["industry_breakdown"])
-        st.plotly_chart(industry_breakdown_fig, use_container_width=True)
-        
-        # Industry momentum box plot
-        industry_momentum_fig = plot_industry_momentum(formatted_data["display_df"])
-        st.plotly_chart(industry_momentum_fig, use_container_width=True)
-    
-    # Momentum heatmap removed as requested
-    
-    # Full stock list with filters
-    st.markdown("""
-    <h2 style="color: #424242; border-bottom: 2px solid #1E88E5; padding-bottom: 8px; margin-bottom: 20px; margin-top: 30px;">
-        Full Stock List
-    </h2>
-    """, unsafe_allow_html=True)
-    
-    # Add filters
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        # Industry filter - handle NaN values
-        industries_list = formatted_data["display_df"]["Industry"].unique().tolist()
-        # Filter out NaN values and convert to string if needed
-        industries_list = [str(i) for i in industries_list if pd.notna(i)]
-        industries = ["All"] + sorted(industries_list)
-        selected_industry = st.selectbox("Filter by Industry", industries)
-    
-    with col2:
-        # Classification filter - handle possible NaN values
-        classifications_list = formatted_data["display_df"]["classification"].unique().tolist()
-        # Filter out NaN values and convert to string if needed
-        classifications_list = [str(c) for c in classifications_list if pd.notna(c)]
-        classifications = ["All"] + sorted(classifications_list)
-        selected_classification = st.selectbox("Filter by Classification", classifications)
-    
-    with col3:
-        # Search by symbol or company
-        search_term = st.text_input("Search by Symbol or Company")
-    
-    # Apply filters
-    filtered_df = formatted_data["display_df"].copy()
-    
-    if selected_industry != "All":
-        # Handle possible NaN values when filtering
-        if pd.isna(filtered_df["Industry"]).any():
-            # Keep rows that match the selected industry or are NaN if 'nan' is selected
-            if selected_industry == "nan":
-                filtered_df = filtered_df[filtered_df["Industry"].isna()]
-            else:
-                filtered_df = filtered_df[filtered_df["Industry"] == selected_industry]
-        else:
-            filtered_df = filtered_df[filtered_df["Industry"] == selected_industry]
-    
-    if selected_classification != "All":
-        # Handle possible NaN values when filtering
-        if pd.isna(filtered_df["classification"]).any():
-            # Keep rows that match the selected classification or are NaN if 'nan' is selected
-            if selected_classification == "nan":
-                filtered_df = filtered_df[filtered_df["classification"].isna()]
-            else:
-                filtered_df = filtered_df[filtered_df["classification"] == selected_classification]
-        else:
-            filtered_df = filtered_df[filtered_df["classification"] == selected_classification]
-    
-    if search_term:
-        filtered_df = filtered_df[
-            filtered_df["symbol"].str.contains(search_term, case=False) | 
-            filtered_df["Company"].str.contains(search_term, case=False)
-        ]
-    
-    # Display the filtered dataframe
-    st.dataframe(
-        filtered_df[["symbol", "Company", "Industry", "momentum", "factor_rank", "classification"]].sort_values("factor_rank"),
-        use_container_width=True,
-        column_config={
-            "symbol": "Symbol",
-            "Company": "Company Name",
-            "Industry": "Industry",
-            "momentum": st.column_config.NumberColumn("Momentum Score", format="%.4f"),
-            "factor_rank": st.column_config.NumberColumn("Rank", format="%d"),
-            "classification": "Classification"
-        }
-    )
-
-# Modern styled footer
-st.markdown("""
-<div style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 40px; text-align: center;">
-    <p style="margin-bottom: 10px; color: #616161;">
-        Stock Momentum Factor Dashboard © 2025
-    </p>
-    <div style="font-size: 0.8rem; color: #9e9e9e;">
-        Powered by Yahoo Finance API and Streamlit
-    </div>
-</div>
-""", unsafe_allow_html=True)
