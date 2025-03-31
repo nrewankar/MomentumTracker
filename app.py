@@ -311,7 +311,7 @@ Custom File: {'Provided' if custom_file is not None else 'None'}
 # Header section with modern styling
 st.markdown("""
 <div style="background-color:#1E88E5; padding:10px; border-radius:10px; margin-bottom:20px;">
-    <h1 style="color:white; text-align:center; margin:0;">Stock Momentum Factor Dashboard</h1>
+    <h1 style="color:white; text-align:center; margin:0;">Momentum Factor Dashboard - by Nityanand R.</h1>
 </div>
 """, unsafe_allow_html=True)
 
