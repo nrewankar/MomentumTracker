@@ -396,7 +396,7 @@ def calculate_momentum_scores(start_date=None, end_date=None, use_cache=True, cu
     # Calculate momentum for each symbol with time limit
     momentum_values = []
     start_time = time.time()
-    max_calculation_time = 300  # 5 minutes maximum for the entire calculation
+    max_calculation_time = 1200  # 5 minutes maximum for the entire calculation
     
     symbols_to_process = list(prices.index.get_level_values("symbol").unique())
     total_symbols = len(symbols_to_process)
