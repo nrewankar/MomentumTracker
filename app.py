@@ -1,3 +1,8 @@
+# can get rid of this after, for debugging
+import os
+print("APP STARTING")
+print("FILES:", os.listdir())
+
 import streamlit as st
 import pandas as pd
 import numpy as np
