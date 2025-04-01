@@ -11,7 +11,7 @@ from datetime import date, timedelta
 VERBOSE = True
 
 # Cache configuration
-CACHE_DIR = ".cache"
+CACHE_DIR = "cache"
 CACHE_VALID_DAYS = 1  # Consider cache valid for 1 day
 
 def momentum(close_series):
